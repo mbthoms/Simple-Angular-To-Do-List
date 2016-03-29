@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ToDoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Angular To Do List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body ng-controller="ToDoController">
+<main class="container">
+    <h1>Add a new To Do</h1>
+    <section>
+        <form>
+            <input ng-model="taskInput">
+            <button class="btn btn-success" ng-click="add()">Add</button>
+        </form>
+        <h2><span></span></h2>
+    </section>
+    <section>
+        <h2>Current To Dos</h2>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="todo in todos track by $index">
+                <span class="col-sm-4">{{ todo }}</span>
+                <button class="btn btn-danger" ng-click="delete()">Delete</button>
+            </li>
+        </ul>
+    </section>
+</main>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="javascripts/todo.js"></script>
+</body>
+</html>
